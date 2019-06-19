@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """factory_method_gof.py"""
+
 from abc import abstractmethod, ABCMeta
 
 class Product(object): pass
-
 class ProductA(Product): pass
-
 class ProductB(Product): pass
 
 class Factory(object, metaclass=ABCMeta):
+
     @staticmethod
     def choose_factory(factory_name='a'):
         factories = dict(a=FactoryA, b=FactoryB)
