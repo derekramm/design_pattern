@@ -3,5 +3,11 @@
     <Python>
       <option name="BLANK_LINES_AROUND_TOP_LEVEL_CLASSES_FUNCTIONS" value="1" />
     </Python>
+    <codeStyleSettings language="Python">
+      <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="0" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="0" />
+      <option name="BLANK_LINES_AROUND_CLASS" value="0" />
+      <option name="BLANK_LINES_AROUND_METHOD" value="0" />
+    </codeStyleSettings>
   </code_scheme>
 </component>
