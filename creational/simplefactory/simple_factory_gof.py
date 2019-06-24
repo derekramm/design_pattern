@@ -25,9 +25,12 @@ class SimpleFactory(object):
         :param product_name: 产品名称
         :return: 子类产品
         """
-        products = dict(a=ProductA, b=ProductB)
-        return products[product_name]()
+        products = dict(a=ProductA(), b=ProductB())
+        return products[product_name]
 
 if __name__ == '__main__':
-    print(SimpleFactory.get_product('a'))
-    print(SimpleFactory.get_product('b'))
+    # print(SimpleFactory.get_product('a'))
+    # print(SimpleFactory.get_product('b'))
+    a1 = SimpleFactory.get_product('a')
+    a2 = SimpleFactory.get_product('a')
+    print(a1 is a2)
