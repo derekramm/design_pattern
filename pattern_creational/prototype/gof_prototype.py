@@ -12,9 +12,9 @@ class Prototype(object):
     def deep_clone(self): return deepcopy(self)
 
 if __name__ == '__main__':
-    p = Prototype('p', ['p'])
+    p = Prototype('val', ['ref'])
     p1, p2 = p.clone(), p.deep_clone()
     print(p.__dict__, p1.__dict__, p2.__dict__)
-    p.val = 'prototype'
-    p.ref[0] = ['prototype']
+    p.val = 'value'
+    p.ref[0] = ['reference']
     print(p.__dict__, p1.__dict__, p2.__dict__)

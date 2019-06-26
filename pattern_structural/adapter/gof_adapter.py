@@ -6,8 +6,7 @@ class Target(object):
     def show(self): pass
 
 class Adaptee(object):
-    @classmethod
-    def request(cls): return 'Adaptee request'
+    def request(self): return f'{self.__class__.__name__} request()'
 
 class Adapter(Target):
     def __init__(self): self.adaptee = Adaptee()

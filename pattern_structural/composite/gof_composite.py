@@ -2,16 +2,11 @@
 # -*- coding:utf-8 -*-
 """gof_composite.py"""
 
-from abc import ABCMeta, abstractmethod
-
-class Component(object, metaclass=ABCMeta):
+class Component(object):
     def __init__(self, name): self.name = name
     def show(self, level):print('-' * level + self.name)
 
-    @abstractmethod
     def add(self, c): pass
-
-    @abstractmethod
     def remove(self, c): pass
 
 class Composite(Component):
@@ -20,25 +15,22 @@ class Composite(Component):
         self.components = []
 
     def remove(self, c): self.components.remove(c)
-    def add(self, c):
-        self.components.append(c)
-        return self
+    def add(self, c): self.components.append(c)
 
     def show(self, level):
         super().show(level)
-        for c in self.components:
-            c.show(level + 1)
+        for c in self.components: c.show(level + 1)
 
-class Leaf(Component):
-    def add(self, c): raise NotImplementedError
-    def remove(self, c): raise NotImplementedError
+class Leaf(Component): pass
 
 if __name__ == '__main__':
     root = Composite('root')
-    na = Composite('na')
-    nb = Composite('nb')
-    n1 = Leaf('n1')
-    n2 = Leaf('n2')
-    root.add(na.add(n1).add(n2)).add(nb.add(n1).add(n2))
-    root.show(1)
-
+    na, nb = Composite('na'), Composite('nb')
+    n1, n2 = Leaf('n1'), Leaf('n2')
+    root.add(na)
+    root.add(nb)
+    na.add(n1)
+    na.add(n2)
+    nb.add(n1)
+    nb.add(n2)
+    root.show(0)

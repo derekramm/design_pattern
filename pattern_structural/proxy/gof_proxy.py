@@ -3,13 +3,10 @@
 """gof_proxy.py"""
 
 class Target(object):
-    @staticmethod
-    def show(): return 'Target show'
+    def show(self): return f'{self.__class__.__name__} show()'
 
 class Proxy(object):
-    def __init__(self):
-        self.target = Target()
-
+    def __init__(self): self.target = Target()
     def show(self): return self.target.show()
 
 if __name__ == '__main__':
