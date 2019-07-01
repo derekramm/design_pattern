@@ -10,7 +10,7 @@ class Subject(object):
         for o in self.observers: o.update()
 class ConcreteSubject(Subject): pass
 class Observer(object):
-    def update(self, subject): pass
+    def update(self): pass
 class ObserverA(Observer):
     def __init__(self, s):
         self.concrete_subject = s
