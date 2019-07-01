@@ -68,7 +68,7 @@ class Div(Calculator):
         重写父类抽象方法
         :return: 两个元素数字相【除】的结果
         """
-        if not self.numb:
+        if self.numb:
             return self.numa / self.numb
         raise ZeroDivisionError
 
