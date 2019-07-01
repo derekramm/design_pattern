@@ -3,6 +3,7 @@
 """gof_command.py"""
 
 class Receiver(object):
+    """处理类"""
     def show_a(self): print(f'{self.__class__.__name__} show_a()')
     def show_b(self): print(f'{self.__class__.__name__} show_b()')
 class Command(object):
