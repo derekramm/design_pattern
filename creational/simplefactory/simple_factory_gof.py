@@ -1,6 +1,7 @@
 #!/usr/bin/evn python
 # -*- coding:utf-8 -*-
-"""simple_factory_gof.py"""
+"""simple_factory_gof.py
+简单工厂："""
 class Product: pass
 class ProductA(Product): pass
 class ProductB(Product): pass
